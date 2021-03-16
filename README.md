@@ -5,3 +5,6 @@ This is a game Space Invader of my own version I made after watching the Pygame 
 YouTube Link: https://www.youtube.com/watch?v=FfWpgLFMI7w
 
 Original Space Invader Code Link: https://github.com/attreyabhatt/Space-Invaders-Pygame
+
+All icons are obtained from flaticon.
+Check them out: https://www.flaticon.com/
