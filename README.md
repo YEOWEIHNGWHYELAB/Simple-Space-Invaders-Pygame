@@ -8,3 +8,6 @@ Original Space Invader Code Link: https://github.com/attreyabhatt/Space-Invaders
 
 All icons are obtained from flaticon.
 Check them out: https://www.flaticon.com/
+
+BackGround is obtained from freepik.
+Check them out: https://www.freepik.com/
