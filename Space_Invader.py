@@ -125,7 +125,7 @@ while running:
 
             if keys[pygame.K_SPACE] == 1:
                 if bullet_state is "ready":
-                    bullet_Sound = mixer.Sound('ero-slime2.wav')
+                    bullet_Sound = mixer.Sound('laser.wav')
                     bullet_Sound.play()  # If you add in the -1 as argument, see what will happen, the laser sound will just continously occurring...
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
