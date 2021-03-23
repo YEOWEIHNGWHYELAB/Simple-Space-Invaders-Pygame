@@ -109,22 +109,26 @@ while running:
             running = False
 
         # if keystroke is pressed check whether its right or left
-        if event.type == pygame.KEYDOWN:  # This check is any keystroke have been pressed on your keyboard!
-            print("A keystroke is pressed")
-            if event.key == pygame.K_LEFT:  # This check for left arrow key being pressed
+        keys = pygame.key.get_pressed()
+        for key_1 in keys:
+            if keys[pygame.K_LEFT] == 1 and keys[pygame.K_RIGHT] == 1:  # Check for the transient period where both left and right keys are depressed together.
+                playerX_change = 0
+
+            if keys[pygame.K_LEFT] == 0 or keys[pygame.K_RIGHT] == 0:
+                playerX_change = 0
+
+            if keys[pygame.K_LEFT] == 1:  # This check for left arrow key being pressed
                 playerX_change = -5
-            if event.key == pygame.K_RIGHT:  # This check for RIGHT arrow key being pressed
+
+            if keys[pygame.K_RIGHT] == 1:  # This check for RIGHT arrow key being pressed
                 playerX_change = 5
-            if event.key == pygame.K_SPACE:
+
+            if keys[pygame.K_SPACE] == 1:
                 if bullet_state is "ready":
-                    bullet_Sound = mixer.Sound('laser.wav')
+                    bullet_Sound = mixer.Sound('ero-slime2.wav')
                     bullet_Sound.play()  # If you add in the -1 as argument, see what will happen, the laser sound will just continously occurring...
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
-
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                playerX_change = 0
 
     # Checking for boundaries of spaceship so it doesn't go out of bounds
     playerX += playerX_change
