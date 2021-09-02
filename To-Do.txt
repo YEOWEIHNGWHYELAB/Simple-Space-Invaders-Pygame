@@ -1,0 +1,4 @@
+Improvements
+
+1) Make the game run faster over time. 
+2) Multiple stages. 
