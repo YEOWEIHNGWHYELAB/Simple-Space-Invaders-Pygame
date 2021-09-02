@@ -99,7 +99,8 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
 # Game Loop
 running = True  # Assign a variable with Boolean True first
 while running:
-
+    # Delay
+    pygame.time.delay(5)
     # RGB - Red, Green, Blue
     screen.fill((0, 0, 0))
     # Background Image
