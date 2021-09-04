@@ -1,6 +1,7 @@
 # Simple_Space_Invaders_Pygame
 
 This is a game Space Invader of my own version I made after watching the Pygame Tutorial for Beginners - Python Game Development Course on YouTube. I have made some changes to the button control to make it more responsive.
+I highly recommend this beginners tutorial, I learnt a lot of concept from this 2 hourse lecture!
 Be Creative, don't need to follow the "Space Ship & Alien" kinda thing... Maybe you could make it into a car game where it need to dodge obstacles...
 
 YouTube Link: https://www.youtube.com/watch?v=FfWpgLFMI7w
