@@ -67,7 +67,7 @@ over_font = pygame.font.Font('freesansbold.ttf', 64)
 
 
 def show_score(x, y):
-    score = font.render("Score :" + str(score_value), True, (255, 255, 255))
+    score = font.render("Score: " + str(score_value), True, (255, 255, 255))
     screen.blit(score, (x, y))
 
 def game_over_text():
@@ -111,21 +111,21 @@ while running:
 
         # if keystroke is pressed check whether its right or left
         keys = pygame.key.get_pressed()
-        for key_1 in keys:
-            if keys[pygame.K_LEFT] == 1 and keys[pygame.K_RIGHT] == 1:  # Check for the transient period where both left and right keys are depressed together.
-                playerX_change = 0
-
+        for curr_key in keys:
+            # Check for the transient period where both left and right keys are depressed together.
             if keys[pygame.K_LEFT] == 0 or keys[pygame.K_RIGHT] == 0:
                 playerX_change = 0
 
-            if keys[pygame.K_LEFT] == 1:  # This check for left arrow key being pressed
-                playerX_change = -5
-
-            if keys[pygame.K_RIGHT] == 1:  # This check for RIGHT arrow key being pressed
-                playerX_change = 5
+            if keys[pygame.K_LEFT] == 1 and keys[pygame.K_RIGHT] == 1:
+                playerX_change = 0
+            else:
+                if keys[pygame.K_LEFT] == 1:
+                    playerX_change = -5
+                if keys[pygame.K_RIGHT] == 1:
+                    playerX_change = 5
 
             if keys[pygame.K_SPACE] == 1:
-                if bullet_state is "ready":
+                if bullet_state == "ready":
                     bullet_Sound = mixer.Sound('laser.wav')
                     bullet_Sound.play()  # If you add in the -1 as argument, see what will happen, the laser sound will just continously occurring...
                     bulletX = playerX
@@ -175,7 +175,7 @@ while running:
     if bulletY <= 0:
         bulletY = 480
         bullet_state = "ready"
-    if bullet_state is "fire":
+    if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
 
